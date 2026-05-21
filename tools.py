@@ -21,7 +21,7 @@ def get_secret(key):
 
 
 
-tavily = TavilyClient(api_key=os.getenv("TAVILY_API_KEY"))
+tavily = TavilyClient(api_key=get_secret("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"))
 
 @tool
 def web_search(query : str) -> str:
