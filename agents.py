@@ -20,7 +20,7 @@ def get_secret(key):
 
 
 #model setup 
-llm = ChatGroq(model="llama3-8b-8192", temperature=0, api_key=get_secret("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"))
+llm = ChatGroq(model="llama-3.1-8b-instant", temperature=0, api_key=get_secret("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"))
 
 
 #1st agent 
