@@ -5,7 +5,21 @@ from tavily import TavilyClient
 import os 
 from dotenv import load_dotenv
 from rich import print
-load_dotenv()
+#load_dotenv()
+
+
+
+import streamlit as st
+import os
+
+# Load secrets for both Streamlit Cloud and local
+def get_secret(key):
+    try:
+        return st.secrets[key]
+    except:
+        return os.getenv(key)
+
+
 
 tavily = TavilyClient(api_key=os.getenv("TAVILY_API_KEY"))
 
