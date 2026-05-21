@@ -5,7 +5,19 @@ from langchain_core.output_parsers import StrOutputParser
 from tools import web_search , scrape_url 
 from dotenv import load_dotenv
 
-load_dotenv()
+#load_dotenv()
+
+import streamlit as st
+import os
+
+# Load secrets for both Streamlit Cloud and local
+def get_secret(key):
+    try:
+        return st.secrets[key]
+    except:
+        return os.getenv(key)
+
+
 
 #model setup 
 llm = ChatGroq(model="llama3-8b-8192", temperature=0)
